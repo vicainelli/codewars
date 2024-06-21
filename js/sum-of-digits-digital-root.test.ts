@@ -1,13 +1,13 @@
 import { describe, it, expect } from "bun:test";
 
 /**
-@description: Given a number, return the digital root of that number.
-
-@example:
-digitalRoot(16) => 7
-digitalRoot(456) => 6
-digitalRoot(493193) => 2
-*/
+ * @description: Given a number, return the digital root of that number.
+ *
+ * @example:
+ * digitalRoot(16) => 7
+ * digitalRoot(456) => 6
+ * digitalRoot(493193) => 2
+ */
 export function digitalRoot(n: number): number {
   return ((n - 1) % 9) + 1;
 }
