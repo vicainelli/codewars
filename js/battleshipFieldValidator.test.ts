@@ -36,7 +36,7 @@ const SHIPS: SHIPS_TYPE = {
 
 const isBinary = (num: number): boolean => num === 0 || num === 1;
 
-describe.skip("isBinary", () => {
+describe("isBinary", () => {
   it("should return false when is not binary", () => {
     expect(isBinary(2)).toBeFalse();
   });

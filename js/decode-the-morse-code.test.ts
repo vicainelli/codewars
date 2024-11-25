@@ -57,18 +57,18 @@ function decodeWord(word: string): string {
 
   return word
     .split(LETTER_SEPARATOR)
-    .map((code) => MORSE_CODE[code])
+    .map((code) => MORSE_CODE?[code])
     .join("");
 }
 
-export function decodeMorse(morseCode: string): string {
+function decodeMorse(morseCode: string): string {
   // your code here
   const morseWords = morseCode.split(WORD_SEPARATOR);
 
   return morseWords.map(decodeWord).join(" ").trim();
 }
 
-describe.skip("decodeMorse", () => {
+describe("decodeMorse", () => {
   it("should work with a single letter", () => {
     expect(decodeMorse(".-")).toEqual("A");
   });
