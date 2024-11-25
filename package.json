@@ -2,10 +2,13 @@
   "name": "codewards",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "test:ci": "bun test --coverage"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5.5.0"
+    "typescript": "^5.5.2"
   }
 }
