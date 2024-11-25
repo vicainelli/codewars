@@ -1,15 +1,5 @@
 import { describe, it, expect } from "bun:test";
-
-export function narcissistic(value: number): boolean {
-  return (
-    value ===
-    value
-      .toString()
-      .split("")
-      .reduce((acc, curr, _, xs) => acc + parseInt(curr) ** xs.length, 0)
-  );
-}
-
+import { narcissistic } from "./does-my-number-look-big-in-this";
 describe("narcissistic", () => {
   it("should return true for 7", () => {
     expect(narcissistic(7)).toBe(true);

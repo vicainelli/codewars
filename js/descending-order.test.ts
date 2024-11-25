@@ -1,16 +1,5 @@
 import { describe, it, expect } from "bun:test";
-
-const descendingOrder = (n: number): number =>
-  Number(
-    n
-      .toString()
-      .split("")
-      .map((n) => Number(n))
-      .filter((n) => n > 0)
-      .sort()
-      .reverse()
-      .join(""),
-  );
+import { descendingOrder } from "./descending-order";
 
 describe("descendingOrder", () => {
   it("basicTests", () => {

@@ -1,7 +1,5 @@
 import { describe, it, expect } from "bun:test";
-
-const oddOrEven = (a: number[]): string =>
-  a.reduce((acc, curr) => acc + curr, 0) % 2 === 0 ? "even" : "odd";
+import { oddOrEven } from "./odd-or-even";
 
 describe("oddOrEven", () => {
   it("Edge tests", () => {

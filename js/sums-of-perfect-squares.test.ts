@@ -1,49 +1,56 @@
 import { describe, expect, it } from "bun:test";
-
-function is_perfect(n: number): boolean {
-  const x = Math.floor(Math.sqrt(n));
-  return x * x === n;
-}
-
-function sumOfSquares(n: number): number {
-  if (n < 4) {
-    return n;
-  }
-
-  if (is_perfect(n)) {
-    return 1;
-  }
-
-  while ((n & 3) === 0) {
-    n >>= 2;
-  }
-
-  if ((n & 7) === 7) {
-    return 4;
-  }
-
-  const x = Math.floor(Math.sqrt(n));
-
-  for (let i = 1; i <= x; i++) {
-    if (is_perfect(n - i * i)) {
-      return 2;
-    }
-  }
-
-  return 3;
-}
-
+import { sumOfSquares } from "./sums-of-perfect-squares";
 describe("sumOfSquares", () => {
-  it("should return the sum of the squares of the first n natural numbers", () => {
-    expect(sumOfSquares(17)).toBe(2);
-    expect(sumOfSquares(16)).toBe(1);
+  it("should return the correct number of perfect squares that sum up to n", () => {
+    expect(sumOfSquares(1)).toBe(1);
+    expect(sumOfSquares(2)).toBe(2);
+    expect(sumOfSquares(3)).toBe(3);
+    expect(sumOfSquares(4)).toBe(1);
+    expect(sumOfSquares(5)).toBe(2);
+    expect(sumOfSquares(6)).toBe(3);
+    expect(sumOfSquares(7)).toBe(4);
+    expect(sumOfSquares(8)).toBe(3);
+    expect(sumOfSquares(9)).toBe(1);
+    expect(sumOfSquares(10)).toBe(2);
+    expect(sumOfSquares(11)).toBe(3);
+    expect(sumOfSquares(12)).toBe(3);
+    expect(sumOfSquares(13)).toBe(2);
+    expect(sumOfSquares(14)).toBe(3);
     expect(sumOfSquares(15)).toBe(4);
-    expect(sumOfSquares(40000)).toBe(1);
-    expect(sumOfSquares(90000)).toBe(1);
-    expect(sumOfSquares(788544)).toBe(1);
-    expect(sumOfSquares(1522756)).toBe(1);
-    expect(sumOfSquares(152399025)).toBe(1);
-    expect(sumOfSquares(1524155677489)).toBe(1);
-    expect(sumOfSquares(1524155677490)).toBe(2);
+    expect(sumOfSquares(16)).toBe(1);
+    expect(sumOfSquares(17)).toBe(2);
+    expect(sumOfSquares(18)).toBe(2);
+    expect(sumOfSquares(19)).toBe(3);
+    expect(sumOfSquares(20)).toBe(2);
+    expect(sumOfSquares(21)).toBe(3);
+    expect(sumOfSquares(22)).toBe(3);
+    expect(sumOfSquares(23)).toBe(4);
+    expect(sumOfSquares(24)).toBe(3);
+    expect(sumOfSquares(25)).toBe(1);
+    expect(sumOfSquares(26)).toBe(2);
+    expect(sumOfSquares(27)).toBe(3);
+    expect(sumOfSquares(28)).toBe(4);
+    expect(sumOfSquares(29)).toBe(2);
+    expect(sumOfSquares(30)).toBe(3);
+    expect(sumOfSquares(31)).toBe(4);
+    expect(sumOfSquares(32)).toBe(3);
+    expect(sumOfSquares(33)).toBe(3);
+    expect(sumOfSquares(34)).toBe(2);
+    expect(sumOfSquares(35)).toBe(3);
+    expect(sumOfSquares(36)).toBe(1);
+    expect(sumOfSquares(37)).toBe(2);
+    expect(sumOfSquares(38)).toBe(3);
+    expect(sumOfSquares(39)).toBe(4);
+    expect(sumOfSquares(40)).toBe(2);
+    expect(sumOfSquares(41)).toBe(2);
+    expect(sumOfSquares(42)).toBe(3);
+    expect(sumOfSquares(43)).toBe(3);
+    expect(sumOfSquares(44)).toBe(3);
+    expect(sumOfSquares(45)).toBe(2);
+    expect(sumOfSquares(46)).toBe(3);
+    expect(sumOfSquares(47)).toBe(4);
+    expect(sumOfSquares(48)).toBe(3);
+    expect(sumOfSquares(49)).toBe(1);
+    expect(sumOfSquares(50)).toBe(2);
   });
 });

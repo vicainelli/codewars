@@ -1,10 +1,5 @@
 import { describe, it, expect } from "bun:test";
-
-// Defining the function areDisjoint
-function areDisjoint(array1: string[], array2: string[]) {
-  const set1 = new Set(array1);
-  return !array2.some((element: string) => set1.has(element));
-}
+import { areDisjoint } from "./areDisjoint";
 
 describe("areDisjoint", () => {
   it("should return true", () => {

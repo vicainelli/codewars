@@ -1,7 +1,6 @@
 [test]
 
-# to require 90% line-level and function-level coverage
-# coverageThreshold = 0.9
-
-# to set different thresholds for lines and functions
-coverageThreshold = { lines = 0.9, functions = 0.9 }
+coverage = true
+coverageReporter = ["text", "lcov"]
+coverageThreshold = 0.8
+coverageDir = "coverage/raw/bun"

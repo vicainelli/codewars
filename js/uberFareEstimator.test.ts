@@ -1,18 +1,5 @@
 import { describe, it, expect } from "bun:test";
-
-function uberFareEstimator(
-  rideTime: number,
-  rideDistance: number,
-  cosPerMinute: number,
-  costPerDistance: number,
-) {
-  const factor = Math.pow(10, 2);
-  return (
-    Math.round(
-      factor * (cosPerMinute * rideTime + rideDistance * costPerDistance),
-    ) / factor
-  );
-}
+import { uberFareEstimator } from "./uberFareEstimator";
 
 describe("uberFareEstimator", () => {
   it("should return the correct values", () => {

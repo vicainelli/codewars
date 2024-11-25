@@ -1,13 +1,5 @@
 import { describe, it, expect } from "bun:test";
-
-const betterThanAverage = (
-  classPoints: number[],
-  yourPoints: number,
-): boolean => {
-  return (
-    yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length
-  );
-};
+import { betterThanAverage } from "./better-than-average";
 
 describe("betterThanAverage", () => {
   it("should work", () => {

@@ -1,16 +1,6 @@
 import { describe, it, expect } from "bun:test";
+import { adjacentElementsProduct } from "./max-product";
 
-const adjacentElementsProduct = (arr: number[]): number => {
-  const result = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i + 1]) {
-      result.push(arr[i] * arr[i + 1]);
-    }
-  }
-
-  return result.sort((a, b) => b - a)[0];
-};
 
 describe("adjacentElementsProduct", () => {
   it("fixed tests", () => {
@@ -21,15 +11,15 @@ describe("adjacentElementsProduct", () => {
     ).toBe(-14);
   });
 
-  describe("Random tests", function () {
+  describe("Random tests", () => {
     const sol = (arr: number[]) =>
       arr.reduce(
         (a, b, i) =>
           i < arr.length - 1 && b * arr[i + 1] > a ? b * arr[i + 1] : a,
-        -Infinity
+        Number.NEGATIVE_INFINITY
       );
     for (let i = 0; i < 100; i++) {
-      let a = Array.from(
+      const a = Array.from(
         { length: Math.floor(Math.random() * 49) + 2 },
         () => Math.floor(Math.random() * 2001) - 1000
       );

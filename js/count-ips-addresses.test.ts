@@ -1,17 +1,5 @@
 import { describe, it, expect } from "bun:test";
-
-const ipsBetween = (start: string, end: string): number => {
-  return (
-    end
-      .split(".")
-      .map(Number)
-      .reduce((acc, curr) => acc * 256 + curr, 0) -
-    start
-      .split(".")
-      .map(Number)
-      .reduce((acc, curr) => acc * 256 + curr, 0)
-  );
-};
+import { ipsBetween } from "./count-ips-addresses";
 
 describe("count-ips-addresses", () => {
   it("should count ips between two addresses", () => {

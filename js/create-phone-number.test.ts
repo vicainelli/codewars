@@ -1,9 +1,5 @@
 import { describe, expect, it } from "bun:test";
-
-const createPhoneNumber = (n: number[]): string => {
-  const j = n.join("");
-  return `(${j.slice(0, 3)}) ${j.slice(3, 6)}-${j.slice(6, 10)}`;
-};
+import { createPhoneNumber } from "./create-phone-number";
 
 describe("createPhoneNumber", () => {
   it("should create a phone number", () => {
